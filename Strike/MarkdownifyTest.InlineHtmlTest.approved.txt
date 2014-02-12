@@ -1,0 +1,15 @@
+﻿<table>
+<thead>
+<tr>
+<th>Tables</th>
+<th >Are</th>
+<th >Cool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>col 3 is</td>
+<td >right-aligned</td>
+<td >$1600</td>
+</tbody>
+</table>
