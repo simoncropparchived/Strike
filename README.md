@@ -59,7 +59,7 @@ The output will be this
 
 ## MarkedJS
 
-The binary ships with a resource merged version of [MarkedJS]https://github.com/chjj/marked/). Also see the [License](https://github.com/chjj/marked/blob/master/LICENSE).
+The binary ships with a resource merged version of [MarkedJS](https://github.com/chjj/marked/). Also see the [License](https://github.com/chjj/marked/blob/master/LICENSE).
 
 ### Current merged version
 
@@ -77,13 +77,11 @@ The binary ships with an ILMerged copy of the [MSIE JavaScript Engine](https://g
 
 Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/markdown/) as a document source.
 
-
-| Engine | Construction | FirstRun | Bulk (304 docs) | Average per doc |
-|:-------|:------------:|:--------:|:---------------:|:---------------:|
-|MarkdownSharp|11 ms|56 ms|504 ms|**1.66 ms**|
-|MarkdownDeep|1 ms|24 ms|53 ms|**0.17 ms**|
-|Strike|41 ms|8 ms|322 ms|**1.06 ms**|
-
+| Engine | Warm up | Construction |  Bulk (304 docs) | Average per doc |
+|:-------|:-------:|:------------:|:---------------:|:---------------:|
+|MarkdownSharp|0 ms|0 ms|474 ms|**1.56 ms**|
+|MarkdownDeep|0 ms|0 ms|51 ms|**0.17 ms**|
+|Strike|15 ms|0 ms|315 ms|**1.04 ms**|
 
 ### So why use this library
 

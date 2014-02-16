@@ -27,8 +27,8 @@ class Program
         var output = new StringBuilder(); 
         output .AppendFormat(
 @"
-| Engine | Construction | FirstRun | Bulk ({0} docs) | Average per doc |
-|:-------|:------------:|:--------:|:---------------:|:---------------:|
+| Engine | Warm up | Construction |  Bulk ({0} docs) | Average per doc |
+|:-------|:-------:|:------------:|:---------------:|:---------------:|
 ", testTexts.Count);
         foreach (var result in results)
         {
@@ -42,6 +42,14 @@ class Program
     {
         var result = new Result {Name = "Strike"};
         var stopwatch = Stopwatch.StartNew();
+        using (var warmup = new Markdownify())
+        {
+            warmup.Transform(testTexts.First());
+        }
+        stopwatch.Stop();
+        result.WarmUp = stopwatch.ElapsedMilliseconds;
+
+        stopwatch = Stopwatch.StartNew();
         using (var markdownify = new Markdownify())
         {
             stopwatch.Stop();
@@ -66,8 +74,23 @@ class Program
 
     static void TestMarkdownDeep()
     {
+
         var result = new Result {Name = "MarkdownDeep"};
+
+
         var stopwatch = Stopwatch.StartNew();
+        var warmup = new MarkdownDeep.Markdown
+        {
+            ExtraMode = true,
+            MarkdownInHtml = true,
+            SafeMode = false,
+        };
+        stopwatch.Stop();
+        result.WarmUp = stopwatch.ElapsedMilliseconds;
+
+        warmup.Transform(testTexts.First());
+
+        stopwatch = Stopwatch.StartNew();
         var markdownify = new MarkdownDeep.Markdown
         {
             ExtraMode = true, 
@@ -95,8 +118,14 @@ class Program
 
     static void TestMarkdownSharp()
     {
-        var result = new Result {Name = "MarkdownSharp"};
+        var result = new Result { Name = "MarkdownSharp" };
         var stopwatch = Stopwatch.StartNew();
+        var warmup = new MarkdownSharp.Markdown();
+        warmup.Transform(testTexts.First());
+        stopwatch.Stop();
+        result.WarmUp = stopwatch.ElapsedMilliseconds;
+
+        stopwatch = Stopwatch.StartNew();
         var markdownify = new MarkdownSharp.Markdown();
 
         stopwatch.Stop();
