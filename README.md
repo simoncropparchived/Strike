@@ -87,7 +87,7 @@ Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/mar
 
 So this raises the question of
  
-> why use this library over MarkdownDeep". 
+> why use this library over MarkdownDeep
 
 And the answer is 
 
