@@ -56,6 +56,33 @@ The output will be this
 
 **Note:** The indentation is added for clarity.  
 
+
+## MarkedJS
+
+The binary ships with a resource merged version of [MarkedJS]https://github.com/chjj/marked/). Also see the [License](https://github.com/chjj/marked/blob/master/LICENSE).
+
+### Current merged version
+
+The current version included in the library is v0.3.1. If you feel a newer version should be included at any point in time please raise an issue.
+
+### Running a custom version
+
+If you want to run a custom version of MarkedJS simply place the custom `marked.js` in the current running directory and that file will be used instead of the merged version. The newest MarkedJS file can be obtained here https://github.com/chjj/marked/tree/master/lib 
+
+## MSIE JavaScript Engine for .NET
+
+The binary ships with an ILMerged copy of the [MSIE JavaScript Engine](https://github.com/Taritsyn/MsieJavaScriptEngine/). It also gives credit to various other libraries for its' inspiration [MSIE JavaScript Engine Credits](https://github.com/Taritsyn/MsieJavaScriptEngine#credits). Also see the [License](http://github.com/Taritsyn/MsieJavaScriptEngine/blob/master/LICENSE.md).
+
+## Peformancne
+
+Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/markdown/) as a document source.
+
+| Engine | Construction | FirstRun | Bulk (304 docs) | Average per doc |
+|:-------|:------------:|:--------:|:---------------:|:---------------:|
+|MarkdownSharp|8 ms|54 ms|478 ms|1.57 ms|
+|MarkdownDeep|1 ms|21 ms|51 ms|0.17 ms|
+|Strike|39 ms|8 ms|311 ms|1.02 ms|
+
 ## Icon 
 
 <a href="http://thenounproject.com/term/lightning/6029/" target="_blank">Lightning</a> designed by <a href="http://thenounproject.com/tlb/" target="_blank">Thomas Le Bas</a> from The Noun Project

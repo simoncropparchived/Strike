@@ -498,15 +498,6 @@
     });
 
     /**
-     * GFM + Line Breaks Inline Grammar
-     */
-
-    inline.breaks = merge({}, inline.gfm, {
-        br: replace(inline.br)('{2,}', '*')(),
-        text: replace(inline.gfm.text)('{2,}', '*')()
-    });
-
-    /**
      * Inline Lexer & Compiler
      */
 
@@ -523,11 +514,7 @@
         }
 
         if (this.options.gfm) {
-            if (this.options.breaks) {
-                this.rules = inline.breaks;
-            } else {
-                this.rules = inline.gfm;
-            }
+            this.rules = inline.gfm;
         } else if (this.options.pedantic) {
             this.rules = inline.pedantic;
         }
@@ -785,7 +772,7 @@
     };
 
     Renderer.prototype.hr = function () {
-        return this.options.xhtml ? '<hr/>\n' : '<hr>\n';
+        return '<hr>\n';
     };
 
     Renderer.prototype.list = function (body, ordered) {
@@ -838,7 +825,7 @@
     };
 
     Renderer.prototype.br = function () {
-        return this.options.xhtml ? '<br/>' : '<br>';
+        return '<br>';
     };
 
     Renderer.prototype.del = function (text) {
@@ -871,7 +858,7 @@
         if (title) {
             out += ' title="' + title + '"';
         }
-        out += this.options.xhtml ? '/>' : '>';
+        out += '>';
         return out;
     };
 
@@ -1047,10 +1034,12 @@
                 return this.renderer.html(html);
             }
             case 'paragraph': {
-                return this.renderer.paragraph(this.inline.output(this.token.text));
+                var output = this.inline.output(this.token.text);
+                return this.renderer.paragraph(this.options.breaks ? output.replace(/\n/g, '<br>') : output);
             }
             case 'text': {
-                return this.renderer.paragraph(this.parseText());
+                var output = this.parseText();
+                return this.renderer.paragraph(this.options.breaks ? output.replace(/\n/g, '<br>') : output);
             }
         }
     };
@@ -1218,8 +1207,7 @@
         langPrefix: 'lang-',
         smartypants: false,
         headerPrefix: '',
-        renderer: new Renderer,
-        xhtml: false
+        renderer: new Renderer
     };
 
     /**
