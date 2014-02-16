@@ -73,7 +73,7 @@ If you want to run a custom version of MarkedJS simply place the custom `marked.
 
 The binary ships with an ILMerged copy of the [MSIE JavaScript Engine](https://github.com/Taritsyn/MsieJavaScriptEngine/). It also gives credit to various other libraries for its' inspiration [MSIE JavaScript Engine Credits](https://github.com/Taritsyn/MsieJavaScriptEngine#credits). Also see the [License](http://github.com/Taritsyn/MsieJavaScriptEngine/blob/master/LICENSE.md).
 
-## Peformancne
+## Performance
 
 Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/markdown/) as a document source.
 
@@ -82,6 +82,21 @@ Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/mar
 |MarkdownSharp|8 ms|54 ms|478 ms|1.57 ms|
 |MarkdownDeep|1 ms|21 ms|51 ms|0.17 ms|
 |Strike|39 ms|8 ms|311 ms|1.02 ms|
+
+### So why use this library
+
+So this raises the question of
+ 
+> why use this library over MarkdownDeep". 
+
+And the answer is 
+
+> It is not only about performance
+
+Other points to consider
+
+* MarkedJS rendering most closely matches GitHubs markdown rendering
+* MarkedJS is an active project with bugs fixed promptly and features being added 
 
 ## Icon 
 
