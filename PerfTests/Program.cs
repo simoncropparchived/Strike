@@ -32,7 +32,7 @@ class Program
 ", testTexts.Count);
         foreach (var result in results)
         {
-            output.AppendFormat("|{0}|{1} ms|{2} ms|{3} ms|{4} ms|\r\n", result.Name, result.Construction, result.FirstRun, result.BulkRun, result.Average);
+            output.AppendFormat("|{0}|{1} ms|{2} ms|{3} ms|**{4} ms**|\r\n", result.Name, result.Construction, result.FirstRun, result.BulkRun, result.Average);
         }
 
         ClipBoardHelper.SetClipboard(output.ToString());

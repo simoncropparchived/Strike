@@ -77,11 +77,13 @@ The binary ships with an ILMerged copy of the [MSIE JavaScript Engine](https://g
 
 Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/markdown/) as a document source.
 
+
 | Engine | Construction | FirstRun | Bulk (304 docs) | Average per doc |
 |:-------|:------------:|:--------:|:---------------:|:---------------:|
-|MarkdownSharp|8 ms|54 ms|478 ms|1.57 ms|
-|MarkdownDeep|1 ms|21 ms|51 ms|0.17 ms|
-|Strike|39 ms|8 ms|311 ms|1.02 ms|
+|MarkdownSharp|11 ms|56 ms|504 ms|**1.66 ms**|
+|MarkdownDeep|1 ms|24 ms|53 ms|**0.17 ms**|
+|Strike|41 ms|8 ms|322 ms|**1.06 ms**|
+
 
 ### So why use this library
 
