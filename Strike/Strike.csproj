@@ -61,7 +61,7 @@
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="Resourcer">
-      <HintPath>..\packages\Resourcer.Fody.1.1.1.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Resourcer.dll</HintPath>
+      <HintPath>..\packages\Resourcer.Fody.1.1.2.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Resourcer.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Scalpel">
@@ -101,19 +101,14 @@
   <Import Project="Fody.targets" />
   <UsingTask TaskName="PepitaPackage.WeavingTask" AssemblyFile="$(SolutionDir)Tools\PepitaPackage.dll" />
   <Target Name="AfterBuild" Condition=" '$(Configuration)' != 'Debug' ">
-
-
     <MakeDir Directories="$(TargetDir)ILMergeTemp\" />
     <Exec Command="&quot;$(SolutionDir)Tools\ilmerge.exe&quot; /internalize /out:&quot;$(TargetDir)ILMergeTemp\$(TargetFileName)&quot; &quot;$(TargetPath)&quot; &quot;$(TargetDir)MsieJavaScriptEngine.dll&quot; /target:library /targetplatform:&quot;v4,$(FrameworkPathOverride)&quot;" />
-
     <ItemGroup>
       <TempFiles Include="$(TargetDir)ILMergeTemp\*.*" />
     </ItemGroup>
     <Copy SourceFiles="@(TempFiles)" DestinationFolder="$(TargetDir)" OverwriteReadOnlyFiles="true" />
     <Delete Files="@(TempFiles)" />
     <RemoveDir Directories="$(TargetDir)ILMergeTemp\" />
-  
-
     <ItemGroup>
       <FilesToDelete Include="$(SolutionDir)NuGetBuild\**\*.*" />
     </ItemGroup>
@@ -125,6 +120,4 @@
     <Copy SourceFiles="$(OutputPath)Strike.xml" DestinationFolder="$(SolutionDir)NuGetBuild\Lib\NET40" />
     <PepitaPackage.WeavingTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild" MetadataAssembly="$(OutputPath)Strike.dll" />
   </Target>
-
-
 </Project>
