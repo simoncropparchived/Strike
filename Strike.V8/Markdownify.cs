@@ -1,13 +1,13 @@
 ﻿using System;
 using System.IO;
-using MsieJavaScriptEngine;
+using Microsoft.ClearScript.V8;
 using Resourcer;
 
-namespace Strike.IE
+namespace Strike.V8
 {
     public class Markdownify : IDisposable
     {
-        MsieJsEngine engine;
+        V8ScriptEngine engine;
 
         public Markdownify():this(new Options(), new RenderMethods())
         {
@@ -15,7 +15,7 @@ namespace Strike.IE
 
         public Markdownify(Options options, RenderMethods rendereMethods)
         {
-            engine = new MsieJsEngine(JsEngineMode.Auto);
+            engine = new V8ScriptEngine();
 
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);
@@ -144,7 +144,7 @@ marked.setOptions({1});", renderExtensions, optionsAsJs);
 
         public string Transform(string input)
         {
-            return (string)engine.CallFunction("marked", input);
+            return (string)engine.Script.marked(input);
         }
 
         public void Dispose()

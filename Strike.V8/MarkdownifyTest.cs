@@ -2,7 +2,7 @@
 using ApprovalTests;
 using NUnit.Framework;
 using Strike;
-using Strike.IE;
+using Strike.V8;
 
 [TestFixture]
 public class MarkdownifyTest

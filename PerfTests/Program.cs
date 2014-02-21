@@ -4,7 +4,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using Strike;
 
 class Program
 {
@@ -23,7 +22,8 @@ class Program
 
         TestMarkdownSharp();
         TestMarkdownDeep();
-        TestStrike();
+        TestStrikeIE();
+        TestStrikeV8();
         var output = new StringBuilder(); 
         output .AppendFormat(
 @"
@@ -38,11 +38,11 @@ class Program
         ClipBoardHelper.SetClipboard(output.ToString());
     }
 
-    static void TestStrike()
+    static void TestStrikeIE()
     {
         var result = new Result {Name = "Strike"};
         var stopwatch = Stopwatch.StartNew();
-        using (var warmup = new Markdownify())
+        using (var warmup = new Strike.IE.Markdownify())
         {
             warmup.Transform(testTexts.First());
         }
@@ -50,7 +50,40 @@ class Program
         result.WarmUp = stopwatch.ElapsedMilliseconds;
 
         stopwatch = Stopwatch.StartNew();
-        using (var markdownify = new Markdownify())
+        using (var markdownify = new Strike.IE.Markdownify())
+        {
+            stopwatch.Stop();
+            result.Construction = stopwatch.ElapsedMilliseconds;
+
+            stopwatch = Stopwatch.StartNew();
+            markdownify.Transform(testTexts.First());
+            stopwatch.Stop();
+            result.FirstRun = stopwatch.ElapsedMilliseconds;
+
+            stopwatch = Stopwatch.StartNew();
+            foreach (var text in testTexts)
+            {
+                markdownify.Transform(text);
+            }
+            stopwatch.Stop();
+            result.BulkRun = stopwatch.ElapsedMilliseconds;
+            result.Average = GetAverage(stopwatch.ElapsedMilliseconds);
+        }
+        results.Add(result);
+    }
+    static void TestStrikeV8()
+    {
+        var result = new Result {Name = "Strike"};
+        var stopwatch = Stopwatch.StartNew();
+        using (var warmup = new Strike.V8.Markdownify())
+        {
+            warmup.Transform(testTexts.First());
+        }
+        stopwatch.Stop();
+        result.WarmUp = stopwatch.ElapsedMilliseconds;
+
+        stopwatch = Stopwatch.StartNew();
+        using (var markdownify = new Strike.V8.Markdownify())
         {
             stopwatch.Stop();
             result.Construction = stopwatch.ElapsedMilliseconds;

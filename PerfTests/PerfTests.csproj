@@ -118,6 +118,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\Common\marked.js">
+      <Link>marked.js</Link>
+    </Content>
     <Content Include="MarkdownTest\Amps and angle encoding.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -177,9 +180,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Strike\Strike.csproj">
+    <ProjectReference Include="..\Strike.V8\Strike.V8.csproj">
+      <Project>{041d857e-d540-40ca-b50b-9e90b5b1f574}</Project>
+      <Name>Strike.V8</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Strike\Strike.IE.csproj">
       <Project>{5cb5aa52-843c-454a-bd57-a1b40dfb2e22}</Project>
-      <Name>Strike</Name>
+      <Name>Strike.IE</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
