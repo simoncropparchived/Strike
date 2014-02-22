@@ -118,9 +118,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\Common\marked.js">
-      <Link>marked.js</Link>
-    </Content>
     <Content Include="MarkdownTest\Amps and angle encoding.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
