@@ -4,11 +4,27 @@ Wraps [Marked.js](https://github.com/chjj/marked/) to make it usable from .net.
 
 ## Nuget
 
-Nuget package http://nuget.org/packages/Strike 
+The project is shipped in several nugets. You only need to pick one.
 
-To Install from the Nuget Package Manager Console 
+There are now three packages to choose from 
+
+### Strike.IE
+
+Uses the MSIE engine and has a dependency on the MSIE package. http://nuget.org/packages/Strike.IE
+
+    PM> Install-Package Strike.IE
     
-    PM> Install-Package Strike
+### Strike.IE.Merged
+
+Uses the MSIE engine and merges the MSIE assembly. http://nuget.org/packages/Strike.IE.Merged
+
+    PM> Install-Package Strike.IE.Merged
+    
+### Strike.V8
+
+Uses the V8 engine and has a dependency on the ClearScript V8 package. http://nuget.org/packages/Strike.IE.Merged
+    
+    PM> Install-Package Strike.V8
 
 ## Usage
 
@@ -69,19 +85,20 @@ The current version included in the library is v0.3.1. If you feel a newer versi
 
 If you want to run a custom version of MarkedJS simply place the custom `marked.js` in the current running directory and that file will be used instead of the merged version. The newest MarkedJS file can be obtained here https://github.com/chjj/marked/tree/master/lib 
 
-## MSIE JavaScript Engine for .NET
-
-The binary ships with an ILMerged copy of the [MSIE JavaScript Engine](https://github.com/Taritsyn/MsieJavaScriptEngine/). It also gives credit to various other libraries for its' inspiration [MSIE JavaScript Engine Credits](https://github.com/Taritsyn/MsieJavaScriptEngine#credits). Also see the [License](http://github.com/Taritsyn/MsieJavaScriptEngine/blob/master/LICENSE.md).
-
 ## Performance
 
 Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/markdown/) as a document source.
 
+
+
 | Engine | Warm up | Construction |  Bulk (304 docs) | Average per doc |
 |:-------|:-------:|:------------:|:---------------:|:---------------:|
-|MarkdownSharp|0 ms|0 ms|474 ms|**1.56 ms**|
+|MarkdownSharp|0 ms|0 ms|479 ms|**1.58 ms**|
 |MarkdownDeep|0 ms|0 ms|51 ms|**0.17 ms**|
-|Strike|15 ms|0 ms|315 ms|**1.04 ms**|
+|Strike.IE|15 ms|0 ms|306 ms|**1.01 ms**|
+|Strike.V8|30 ms|4 ms|85 ms|**0.28 ms**|
+
+
 
 ### So why use this library
 

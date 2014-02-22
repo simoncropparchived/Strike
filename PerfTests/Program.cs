@@ -40,7 +40,7 @@ class Program
 
     static void TestStrikeIE()
     {
-        var result = new Result {Name = "Strike"};
+        var result = new Result {Name = "Strike.IE"};
         var stopwatch = Stopwatch.StartNew();
         using (var warmup = new Strike.IE.Markdownify())
         {
@@ -73,7 +73,7 @@ class Program
     }
     static void TestStrikeV8()
     {
-        var result = new Result {Name = "Strike"};
+        var result = new Result {Name = "Strike.V8"};
         var stopwatch = Stopwatch.StartNew();
         using (var warmup = new Strike.V8.Markdownify())
         {
