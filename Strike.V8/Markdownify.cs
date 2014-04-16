@@ -12,10 +12,14 @@ namespace Strike.V8
         public Markdownify():this(new Options(), new RenderMethods())
         {
         }
-
-        public Markdownify(Options options, RenderMethods rendereMethods)
+        
+        public Markdownify(Options options, RenderMethods rendereMethods): this (options, rendereMethods, new V8ScriptEngine())
         {
-            engine = new V8ScriptEngine();
+        }
+
+        public Markdownify(Options options, RenderMethods rendereMethods, V8ScriptEngine engine)
+        {
+            this.engine = engine;
 
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);

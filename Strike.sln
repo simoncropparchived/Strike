@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE", "Strike\Strike.IE.csproj", "{5CB5AA52-843C-454A-BD57-A1B40DFB2E22}"
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE", "Strike.IE\Strike.IE.csproj", "{5CB5AA52-843C-454A-BD57-A1B40DFB2E22}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfTests", "PerfTests\PerfTests.csproj", "{3009FA17-AFFE-4A9B-9222-325852EFD794}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{A107FE4B-56D5-4BE7-95F5-47667F29288C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.V8", "Strike.V8\Strike.V8.csproj", "{041D857E-D540-40CA-B50B-9E90B5B1F574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE.Merged", "Strike.IE.Merged\Strike.IE.Merged.csproj", "{458D4F5C-83DA-4883-BA9E-9289F4A4526C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,6 +44,12 @@ Global
 		{041D857E-D540-40CA-B50B-9E90B5B1F574}.Deployable|Any CPU.Build.0 = Deployable|Any CPU
 		{041D857E-D540-40CA-B50B-9E90B5B1F574}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{041D857E-D540-40CA-B50B-9E90B5B1F574}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458D4F5C-83DA-4883-BA9E-9289F4A4526C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458D4F5C-83DA-4883-BA9E-9289F4A4526C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458D4F5C-83DA-4883-BA9E-9289F4A4526C}.Deployable|Any CPU.ActiveCfg = Deployable|Any CPU
+		{458D4F5C-83DA-4883-BA9E-9289F4A4526C}.Deployable|Any CPU.Build.0 = Deployable|Any CPU
+		{458D4F5C-83DA-4883-BA9E-9289F4A4526C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458D4F5C-83DA-4883-BA9E-9289F4A4526C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

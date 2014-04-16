@@ -99,7 +99,6 @@
     <Compile Include="MarkdownifyTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="NugetAssets\Strike.IE.Merged.nuspec" />
     <None Include="NugetAssets\Strike.IE.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -115,22 +114,8 @@
   <Target Name="AfterBuild" Condition=" '$(Configuration)' != 'Debug' ">
     <ItemGroup>
       <FilesToDelete Include="$(SolutionDir)NuGetBuild.IE\**\*.*" />
-      <FilesToDelete Include="$(SolutionDir)NuGetBuild.IE.Merged\**\*.*" />
     </ItemGroup>
     <Delete Files="@(FilesToDelete)" />
-    <MakeDir Directories="$(TargetDir)ILMergeTemp\" />
-    <Exec Command="&quot;$(SolutionDir)Tools\ilmerge.exe&quot; /internalize /out:&quot;$(TargetDir)ILMergeTemp\$(TargetFileName)&quot; &quot;$(TargetPath)&quot; &quot;$(TargetDir)MsieJavaScriptEngine.dll&quot; /target:library /targetplatform:&quot;v4,$(FrameworkPathOverride)&quot;" />
-    <MakeDir Directories="$(SolutionDir)NuGetBuild.IE.Merged" />
-    <Copy SourceFiles="$(ProjectDir)NugetAssets\Strike.IE.Merged.nuspec" DestinationFolder="$(SolutionDir)NuGetBuild.IE.Merged" />
-    <Copy SourceFiles="$(TargetDir)ILMergeTemp\$(TargetName).dll" DestinationFolder="$(SolutionDir)NuGetBuild.IE.Merged\Lib\NET40" />
-    <Copy SourceFiles="$(TargetDir)ILMergeTemp\$(TargetName).pdb" DestinationFolder="$(SolutionDir)NuGetBuild.IE.Merged\Lib\NET40" />
-    <Copy SourceFiles="$(TargetDir)$(TargetName).xml" DestinationFolder="$(SolutionDir)NuGetBuild.IE.Merged\Lib\NET40" />
-    <PepitaPackage.WeavingTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild.IE.Merged" MetadataAssembly="$(TargetPath)" />
-    <ItemGroup>
-      <TempFiles Include="$(TargetDir)ILMergeTemp\*.*" />
-    </ItemGroup>
-    <Delete Files="@(TempFiles)" />
-    <RemoveDir Directories="$(TargetDir)ILMergeTemp\" />
     <MakeDir Directories="$(SolutionDir)NuGetBuild.IE" />
     <Copy SourceFiles="$(ProjectDir)NugetAssets\Strike.IE.nuspec" DestinationFolder="$(SolutionDir)NuGetBuild.IE" />
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)NuGetBuild.IE\Lib\NET40" />

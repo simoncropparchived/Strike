@@ -14,9 +14,15 @@ namespace Strike.IE
         }
 
         public Markdownify(Options options, RenderMethods rendereMethods)
+            : this(options, rendereMethods, new MsieJsEngine(JsEngineMode.Auto))
         {
-            engine = new MsieJsEngine(JsEngineMode.Auto);
-
+        }
+#if (!Merged)
+        public 
+#endif
+            Markdownify(Options options, RenderMethods rendereMethods, MsieJsEngine engine)
+        {
+            this.engine = engine;
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);
 

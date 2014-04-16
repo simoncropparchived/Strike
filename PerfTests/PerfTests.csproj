@@ -181,7 +181,7 @@
       <Project>{041d857e-d540-40ca-b50b-9e90b5b1f574}</Project>
       <Name>Strike.V8</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Strike\Strike.IE.csproj">
+    <ProjectReference Include="..\Strike.IE\Strike.IE.csproj">
       <Project>{5cb5aa52-843c-454a-bd57-a1b40dfb2e22}</Project>
       <Name>Strike.IE</Name>
     </ProjectReference>
