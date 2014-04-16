@@ -93,8 +93,10 @@
     <Compile Include="..\Common\StringExtensions.cs">
       <Link>StringExtensions.cs</Link>
     </Compile>
+    <Compile Include="..\Strike\MarkdownifyTest.cs">
+      <Link>MarkdownifyTest.cs</Link>
+    </Compile>
     <Compile Include="Markdownify.cs" />
-    <Compile Include="MarkdownifyTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Licenses\ClearScript.main.license" />

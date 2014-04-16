@@ -46,5 +46,26 @@
         /// https://github.com/chjj/marked#smartypants
         /// </summary>
         public bool SmartyPants;
+
+        /// <summary>
+        /// A function to highlight code blocks. 
+        /// https://github.com/chjj/marked#highlight
+        /// Default: "function (code) {return code;}"
+        /// </summary>
+        public string Highlight = "function (code) {return code;}";
+
+        public string GetOptionsJs()
+        {
+            return string.Format(@"{{gfm: {0}, tables: {1}, breaks: {2}, sanitize: {3}, smartLists: {4}, pedantic: {5}, smartypants: {6}, highlight: {7}, renderer: renderer}}",
+                GitHubFlavor.AsJs(),
+                Tables.AsJs(),
+                Breaks.AsJs(),
+                Sanitize.AsJs(),
+                SmartLists.AsJs(),
+                Pedantic.AsJs(),
+                SmartyPants.AsJs(),
+                Highlight);
+        }
+
     }
 }

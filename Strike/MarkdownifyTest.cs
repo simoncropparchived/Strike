@@ -2,7 +2,11 @@
 using ApprovalTests;
 using NUnit.Framework;
 using Strike;
+#if (IE)
 using Strike.IE;
+#else
+using Strike.V8;
+#endif
 
 [TestFixture]
 public class MarkdownifyTest
@@ -10,18 +14,19 @@ public class MarkdownifyTest
     [Test]
     public void Sample()
     {
-var input = @"
+        var input = @"
 | Tables        | Are           | Cool  |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 ";
 
-using (var markdownify = new Markdownify())
-{
-    Debug.WriteLine(markdownify.Transform(input));
-}
+        using (var markdownify = new Markdownify())
+        {
+            Debug.WriteLine(markdownify.Transform(input));
+        }
     }
+
     [Test]
     public void TableTest()
     {
@@ -38,6 +43,7 @@ using (var markdownify = new Markdownify())
             Approvals.Verify(markdownify.Transform(input).FixNewLines());
         }
     }
+
     [Test]
     public void InlineHtmlTest()
     {
@@ -75,6 +81,7 @@ using (var markdownify = new Markdownify())
             Assert.AreEqual("<p><code>the code</code></p>\n", transform);
         }
     }
+
     [Test]
     public void HeadingTest()
     {
@@ -86,4 +93,36 @@ using (var markdownify = new Markdownify())
     }
 
 
+    [Test]
+    public void MultiLineCodeTest()
+    {
+        var input = @"
+```
+the code
+```";
+        using (var markdownify = new Markdownify())
+        {
+            var transform = markdownify.Transform(input);
+            Assert.AreEqual("<pre><code>the code\n</code></pre>", transform);
+        }
+    }
+
+
+    [Test]
+    public void MultiLineCodeWithhighlightTest()
+    {
+        var input = @"
+```
+the code
+```";
+        var options = new Options
+        {
+            Highlight = "function (code) {return 'before' + code + 'after';}"
+        };
+        using (var markdownify = new Markdownify(options, new RenderMethods()))
+        {
+            var transform = markdownify.Transform(input);
+            Assert.AreEqual("<pre><code>beforethe codeafter\n</code></pre>", transform);
+        }
+    }
 }
