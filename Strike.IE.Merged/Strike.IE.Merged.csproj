@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>e1d0e874</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -104,7 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="NugetAssets\Strike.IE.Merged.nuspec" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="..\Common\marked.js">
@@ -114,7 +117,6 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <UsingTask TaskName="PepitaPackage.WeavingTask" AssemblyFile="$(SolutionDir)Tools\PepitaPackage.dll" />
   <Target Name="AfterBuild" Condition=" '$(Configuration)' != 'Debug' ">
     <ItemGroup>
       <FilesToDelete Include="$(SolutionDir)NuGetBuild.IE.Merged\**\*.*" />
@@ -127,18 +129,20 @@
     <Copy SourceFiles="$(TargetDir)ILMergeTemp\$(TargetName).dll" DestinationFolder="$(SolutionDir)NuGetBuild.IE.Merged\Lib\NET40" />
     <Copy SourceFiles="$(TargetDir)ILMergeTemp\$(TargetName).pdb" DestinationFolder="$(SolutionDir)NuGetBuild.IE.Merged\Lib\NET40" />
     <Copy SourceFiles="$(TargetDir)$(TargetName).xml" DestinationFolder="$(SolutionDir)NuGetBuild.IE.Merged\Lib\NET40" />
-    <PepitaPackage.WeavingTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild.IE.Merged" MetadataAssembly="$(TargetPath)" />
+    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild.IE.Merged" MetadataAssembly="$(TargetPath)" />
     <ItemGroup>
       <TempFiles Include="$(TargetDir)ILMergeTemp\*.*" />
     </ItemGroup>
     <Delete Files="@(TempFiles)" />
     <RemoveDir Directories="$(TargetDir)ILMergeTemp\" />
   </Target>
-  <Import Project="..\packages\Fody.1.22.1\build\Fody.targets" Condition="Exists('..\packages\Fody.1.22.1\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.1.22.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.22.1\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\PepitaPackage.1.20.0.0\build\PepitaPackage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PepitaPackage.1.20.0.0\build\PepitaPackage.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.1.24.0-beta2\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.24.0-beta2\build\Fody.targets'))" />
   </Target>
+  <Import Project="..\packages\PepitaPackage.1.20.0.0\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage.1.20.0.0\build\PepitaPackage.targets')" />
+  <Import Project="..\packages\Fody.1.24.0-beta2\build\Fody.targets" Condition="Exists('..\packages\Fody.1.24.0-beta2\build\Fody.targets')" />
 </Project>
