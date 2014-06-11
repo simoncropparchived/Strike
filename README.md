@@ -22,7 +22,7 @@ Uses the MSIE engine and merges the MSIE assembly. http://nuget.org/packages/Str
     
 ### Strike.V8
 
-Uses the V8 engine and has a dependency on the ClearScript V8 package. http://nuget.org/packages/Strike.IE.Merged
+Uses the V8 engine and has a dependency on the ClearScript V8 package. http://www.nuget.org/packages/Strike.V8/
     
     PM> Install-Package Strike.V8
 
