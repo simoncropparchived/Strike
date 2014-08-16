@@ -33,40 +33,17 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Release\Strike.IE.xml</DocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deployable|AnyCPU'">
-    <OutputPath>bin\Deployable\</OutputPath>
-    <DefineConstants>TRACE;Scalpel,IE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>bin\Deployable\Strike.IE.xml</DocumentationFile>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ApprovalTests">
-      <HintPath>..\packages\ApprovalTests.3.0.5\lib\net40\ApprovalTests.dll</HintPath>
-    </Reference>
-    <Reference Include="ApprovalUtilities">
-      <HintPath>..\packages\ApprovalUtilities.3.0.5\lib\net35\ApprovalUtilities.dll</HintPath>
-    </Reference>
     <Reference Include="Janitor">
       <HintPath>..\packages\Janitor.Fody.1.1.0.0\Lib\portable-net4+sl5+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\Janitor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="MsieJavaScriptEngine, Version=1.4.3.0, Culture=neutral, PublicKeyToken=a3a2846a37ac0d3e, processorArchitecture=MSIL">
+    <Reference Include="MsieJavaScriptEngine, Version=1.4.4.0, Culture=neutral, PublicKeyToken=a3a2846a37ac0d3e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MsieJavaScriptEngine.1.4.3\lib\net40\MsieJavaScriptEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+      <HintPath>..\packages\MsieJavaScriptEngine.1.4.4\lib\net40\MsieJavaScriptEngine.dll</HintPath>
     </Reference>
     <Reference Include="Resourcer">
       <HintPath>..\packages\Resourcer.Fody.1.2.0.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Resourcer.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Scalpel">
-      <HintPath>..\packages\Scalpel.Fody.1.0.1.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Scalpel.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -93,11 +70,7 @@
     <Compile Include="..\Common\RenderMethods.cs">
       <Link>RenderMethods.cs</Link>
     </Compile>
-    <Compile Include="..\Common\StringExtensions.cs">
-      <Link>StringExtensions.cs</Link>
-    </Compile>
     <Compile Include="Markdownify.cs" />
-    <Compile Include="MarkdownifyTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="NugetAssets\Strike.IE.nuspec" />
@@ -111,7 +84,7 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterBuild" Condition=" '$(Configuration)' != 'Debug' ">
+  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Deployable' ">
     <ItemGroup>
       <FilesToDelete Include="$(SolutionDir)NuGetBuild.IE\**\*.*" />
     </ItemGroup>

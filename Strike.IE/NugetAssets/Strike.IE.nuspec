@@ -14,7 +14,7 @@
     <language>en-AU</language>
     <tags>Marked.js, Marked, Markdown</tags>
     <dependencies>
-      <dependency id="MsieJavaScriptEngine" version="1.4.3"/>
+      <dependency id="MsieJavaScriptEngine" version="1.4.4"/>
     </dependencies>
   </metadata>
 </package>

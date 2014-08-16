@@ -1,8 +1,6 @@
-﻿using Scalpel;
-
+﻿
 namespace Strike
 {
-    [Remove]
     static class StringExtensions
     {
         public static string FixNewLines(this string target)
