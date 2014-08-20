@@ -30,39 +30,39 @@
             var renderExtensions = "";
             if (Code != null)
             {
-                renderExtensions += "renderer.code =" + Code;
+                renderExtensions += "renderer.code =" + Code + "\r\n";
             }
             if (BlockQuote != null)
             {
-                renderExtensions += "renderer.blockquote =" + BlockQuote;
+                renderExtensions += "renderer.blockquote =" + BlockQuote + "\r\n";
             }
             if (Heading != null)
             {
-                renderExtensions += "renderer.heading =" + Heading;
+                renderExtensions += "renderer.heading =" + Heading + "\r\n";
             }
             if (Hr != null)
             {
-                renderExtensions += "renderer.hr =" + Hr;
+                renderExtensions += "renderer.hr =" + Hr + "\r\n";
             }
             if (Html != null)
             {
-                renderExtensions += "renderer.html =" + Html;
+                renderExtensions += "renderer.html =" + Html + "\r\n";
             }
             if (List != null)
             {
-                renderExtensions += "renderer.list =" + List;
+                renderExtensions += "renderer.list =" + List + "\r\n";
             }
             if (ListItem != null)
             {
-                renderExtensions += "renderer.listitem =" + ListItem;
+                renderExtensions += "renderer.listitem =" + ListItem + "\r\n";
             }
             if (Paragraph != null)
             {
-                renderExtensions += "renderer.paragraph =" + Paragraph;
+                renderExtensions += "renderer.paragraph =" + Paragraph + "\r\n";
             }
             if (Table != null)
             {
-                renderExtensions += "renderer.table =" + Table;
+                renderExtensions += "renderer.table =" + Table + "\r\n";
             }
             if (TableRow != null)
             {
@@ -70,35 +70,35 @@
             }
             if (TableCell != null)
             {
-                renderExtensions += "renderer.tablecell =" + TableCell;
+                renderExtensions += "renderer.tablecell =" + TableCell + "\r\n";
             }
             if (Strong != null)
             {
-                renderExtensions += "renderer.strong =" + Strong;
+                renderExtensions += "renderer.strong =" + Strong + "\r\n";
             }
             if (Em != null)
             {
-                renderExtensions += "renderer.em =" + Em;
+                renderExtensions += "renderer.em =" + Em + "\r\n";
             }
             if (Codespan != null)
             {
-                renderExtensions += "renderer.codespan =" + Codespan;
+                renderExtensions += "renderer.codespan =" + Codespan + "\r\n";
             }
             if (Br != null)
             {
-                renderExtensions += "renderer.br =" + Br;
+                renderExtensions += "renderer.br =" + Br + "\r\n";
             }
             if (Del != null)
             {
-                renderExtensions += "renderer.del =" + Del;
+                renderExtensions += "renderer.del =" + Del + "\r\n";
             }
             if (Link != null)
             {
-                renderExtensions += "renderer.link =" + Link;
+                renderExtensions += "renderer.link =" + Link + "\r\n";
             }
             if (Image != null)
             {
-                renderExtensions += "renderer.image =" + Image;
+                renderExtensions += "renderer.image =" + Image + "\r\n";
             }
             return renderExtensions;
         }

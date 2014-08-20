@@ -125,4 +125,46 @@ the code
             Assert.AreEqual("<pre><code>beforethe codeafter\n</code></pre>", transform);
         }
     }
+
+    [Test]
+    public void RendererTest()
+    {
+        var input = @"
+```
+the code
+```
+---";
+        
+        var rendereMethods = new RenderMethods
+        {
+            Code = @"function(code,language) {
+  return '<mycode>' + code + '</mycode>';
+};",
+   Hr = "function(){ return '<myhr>';}"
+        };
+        using (var markdownify = new Markdownify(new Options(), rendereMethods))
+        {
+            var transform = markdownify.Transform(input);
+            Assert.AreEqual("<mycode>the code</mycode><myhr>", transform);
+        }
+    }
+    [Test]
+    public void InvokeRootMarkedJsMember()
+    {
+        var input = "![text](href.png \"text\")";
+        
+        var rendereMethods = new RenderMethods
+        {
+            Image = @"
+function (href, title, text) {
+    text = 'replaced text';
+    return marked.Renderer.prototype.image.apply(this, arguments);
+}"
+        };
+        using (var markdownify = new Markdownify(new Options(), rendereMethods))
+        {
+            var transform = markdownify.Transform(input);
+            Assert.AreEqual("<p><img src=\"href.png\" alt=\"replaced text\" title=\"text\"></p>\n", transform);
+        }
+    }
 }
