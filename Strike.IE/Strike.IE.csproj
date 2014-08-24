@@ -84,7 +84,7 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Deployable' ">
+  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release' ">
     <ItemGroup>
       <FilesToDelete Include="$(SolutionDir)NuGetBuild.IE\**\*.*" />
     </ItemGroup>
