@@ -34,9 +34,9 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentDateTime, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6ccbc613702e6c71, processorArchitecture=MSIL">
+    <Reference Include="FluentDateTime, Version=1.11.0.0, Culture=neutral, PublicKeyToken=6ccbc613702e6c71, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FluentDateTime.1.10.1.0\Lib\NET35\FluentDateTime.dll</HintPath>
+      <HintPath>..\packages\FluentDateTime.1.11.0\Lib\NET35\FluentDateTime.dll</HintPath>
     </Reference>
     <Reference Include="MarkdownDeep">
       <HintPath>..\packages\MarkdownDeep.NET.1.5\lib\.NetFramework 3.5\MarkdownDeep.dll</HintPath>
