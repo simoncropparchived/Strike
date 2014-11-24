@@ -96,7 +96,7 @@
     <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)NuGetBuild.IE\Lib\NET40" />
     <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SolutionDir)NuGetBuild.IE\Lib\NET40" />
     <Copy SourceFiles="$(TargetDir)$(TargetName).xml" DestinationFolder="$(SolutionDir)NuGetBuild.IE\Lib\NET40" />
-    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild.IE" MetadataAssembly="$(TargetPath)" />
+    <PepitaPackage.CreatePackageTask NuGetBuildDirectory="$(SolutionDir)NuGetBuild.IE" MetadataAssembly="$(TargetPath)" TargetDir="$(SolutionDir)Nugets\"/>
   </Target>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
