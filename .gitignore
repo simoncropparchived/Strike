@@ -32,6 +32,7 @@
 .builds
 *.dotCover
 
+Nugets
 *.DotSettings
 *.ncrunchsolution
 
