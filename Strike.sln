@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE", "Strike.IE\Strike.IE.csproj", "{5CB5AA52-843C-454A-BD57-A1B40DFB2E22}"
 EndProject
@@ -13,13 +13,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.V8", "Strike.V8\Stri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE.Merged", "Strike.IE.Merged\Strike.IE.Merged.csproj", "{458D4F5C-83DA-4883-BA9E-9289F4A4526C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE.Merged.Tests", "Strike.IE.MergedTests\Strike.IE.Merged.Tests.csproj", "{C6338E62-CFDA-4FC9-8AE1-E71BF74C6010}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE.Merged.Tests", "Strike.IE.Merged.Tests\Strike.IE.Merged.Tests.csproj", "{C6338E62-CFDA-4FC9-8AE1-E71BF74C6010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE.Tests", "Strike.IETests\Strike.IE.Tests.csproj", "{25DECE54-D665-4972-9EFF-4B0E07B8E195}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.IE.Tests", "Strike.IE.Tests\Strike.IE.Tests.csproj", "{25DECE54-D665-4972-9EFF-4B0E07B8E195}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.V8.Tests", "Strike.V8Tests\Strike.V8.Tests.csproj", "{73CA1F27-0702-444E-ABD3-6FCECAEF1B36}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.V8.Tests", "Strike.V8.Tests\Strike.V8.Tests.csproj", "{73CA1F27-0702-444E-ABD3-6FCECAEF1B36}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonForTests", "CommonForTests\CommonForTests.csproj", "{0E24733D-57C3-4706-B41D-3CB06528A9B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.Jint", "Strike.Jint\Strike.Jint.csproj", "{C25BFA62-2568-441E-922F-8B363225583C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.Jint.Merged", "Strike.Jint.Merged\Strike.Jint.Merged.csproj", "{6676AD86-2F76-4421-A663-972C1BECB99B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.Jint.Merged.Tests", "Strike.Jint.Merged.Tests\Strike.Jint.Merged.Tests.csproj", "{F3EAB191-70C4-4397-B9A8-0AEB72A49CEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strike.Jint.Tests", "Strike.Jint.Tests\Strike.Jint.Tests.csproj", "{A0E90E8A-2602-40B3-8717-0D0AD1C5191D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +71,22 @@ Global
 		{0E24733D-57C3-4706-B41D-3CB06528A9B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E24733D-57C3-4706-B41D-3CB06528A9B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E24733D-57C3-4706-B41D-3CB06528A9B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C25BFA62-2568-441E-922F-8B363225583C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C25BFA62-2568-441E-922F-8B363225583C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C25BFA62-2568-441E-922F-8B363225583C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C25BFA62-2568-441E-922F-8B363225583C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6676AD86-2F76-4421-A663-972C1BECB99B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6676AD86-2F76-4421-A663-972C1BECB99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6676AD86-2F76-4421-A663-972C1BECB99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6676AD86-2F76-4421-A663-972C1BECB99B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3EAB191-70C4-4397-B9A8-0AEB72A49CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3EAB191-70C4-4397-B9A8-0AEB72A49CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3EAB191-70C4-4397-B9A8-0AEB72A49CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3EAB191-70C4-4397-B9A8-0AEB72A49CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0E90E8A-2602-40B3-8717-0D0AD1C5191D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E90E8A-2602-40B3-8717-0D0AD1C5191D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E90E8A-2602-40B3-8717-0D0AD1C5191D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E90E8A-2602-40B3-8717-0D0AD1C5191D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

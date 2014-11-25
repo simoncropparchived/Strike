@@ -59,7 +59,7 @@
     <Compile Include="..\CommonForTests\StringExtensions.cs">
       <Link>StringExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\Strike.IETests\MarkdownifyTest.cs">
+    <Compile Include="..\Strike.IE.Tests\MarkdownifyTest.cs">
       <Link>MarkdownifyTest.cs</Link>
     </Compile>
   </ItemGroup>

@@ -23,6 +23,7 @@ class Program
         TestMarkdownSharp();
         TestMarkdownDeep();
         TestStrikeIE();
+        TestStrikeJint();
         TestStrikeV8();
         var output = new StringBuilder(); 
         output .AppendFormat(
@@ -34,8 +35,10 @@ class Program
         {
             output.AppendFormat("|{0}|{1} ms|{2} ms|{3} ms|**{4} ms**|\r\n", result.Name, result.Construction, result.FirstRun, result.BulkRun, result.Average);
         }
-
-        ClipBoardHelper.SetClipboard(output.ToString());
+        var s = output.ToString();
+        Console.Write(s);
+        Console.Write("Copied to clipboard");
+        ClipBoardHelper.SetClipboard(s);
     }
 
     static void TestStrikeIE()
@@ -51,6 +54,39 @@ class Program
 
         stopwatch = Stopwatch.StartNew();
         using (var markdownify = new Strike.IE.Markdownify())
+        {
+            stopwatch.Stop();
+            result.Construction = stopwatch.ElapsedMilliseconds;
+
+            stopwatch = Stopwatch.StartNew();
+            markdownify.Transform(testTexts.First());
+            stopwatch.Stop();
+            result.FirstRun = stopwatch.ElapsedMilliseconds;
+
+            stopwatch = Stopwatch.StartNew();
+            foreach (var text in testTexts)
+            {
+                markdownify.Transform(text);
+            }
+            stopwatch.Stop();
+            result.BulkRun = stopwatch.ElapsedMilliseconds;
+            result.Average = GetAverage(stopwatch.ElapsedMilliseconds);
+        }
+        results.Add(result);
+    }
+    static void TestStrikeJint()
+    {
+        var result = new Result {Name = "Strike.Jint"};
+        var stopwatch = Stopwatch.StartNew();
+        using (var warmup = new Strike.Jint.Markdownify())
+        {
+            warmup.Transform(testTexts.First());
+        }
+        stopwatch.Stop();
+        result.WarmUp = stopwatch.ElapsedMilliseconds;
+
+        stopwatch = Stopwatch.StartNew();
+        using (var markdownify = new Strike.Jint.Markdownify())
         {
             stopwatch.Stop();
             result.Construction = stopwatch.ElapsedMilliseconds;

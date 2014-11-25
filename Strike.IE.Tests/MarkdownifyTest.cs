@@ -4,8 +4,12 @@ using NUnit.Framework;
 using Strike;
 #if (IE)
 using Strike.IE;
-#else
+#endif
+#if (V8)
 using Strike.V8;
+#endif
+#if (Jint)
+using Strike.Jint;
 #endif
 
 [TestFixture]
