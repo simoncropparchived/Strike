@@ -19,6 +19,18 @@ Uses the MSIE engine and has a dependency on the MSIE package. http://nuget.org/
 Uses the MSIE engine and merges the MSIE assembly. http://nuget.org/packages/Strike.IE.Merged
 
     PM> Install-Package Strike.IE.Merged
+
+### Strike.Jint
+
+Uses the Jint engine and has a dependency on the Jint package. http://nuget.org/packages/Strike.Jint
+
+    PM> Install-Package Strike.Jint
+    
+### Strike.Jint.Merged
+
+Uses the Jint engine and merges the Jint assembly. http://nuget.org/packages/Strike.Jint.Merged
+
+    PM> Install-Package Strike.Jint.Merged
     
 ### Strike.V8
 
@@ -178,16 +190,13 @@ Represents [Block level renderer methods](https://github.com/chjj/marked#block-l
 
 Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/markdown/) as a document source.
 
-
-
 | Engine | Warm up | Construction |  Bulk (304 docs) | Average per doc |
 |:-------|:-------:|:------------:|:---------------:|:---------------:|
 |MarkdownSharp|0 ms|0 ms|479 ms|**1.58 ms**|
-|MarkdownDeep|0 ms|0 ms|51 ms|**0.17 ms**|
-|Strike.IE|15 ms|0 ms|306 ms|**1.01 ms**|
-|Strike.V8|30 ms|4 ms|85 ms|**0.28 ms**|
-
-
+|MarkdownDeep|0 ms|0 ms|35 ms|**0.12 ms**|
+|Strike.IE|4 ms|1 ms|187 ms|**0.62 ms**|
+|Strike.Jint|7 ms|11 ms|5693 ms|**18.73 ms**|
+|Strike.V8|30 ms|4 ms|93 ms|**0.31 ms**|
 
 ### So why use this library
 
