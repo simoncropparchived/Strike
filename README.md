@@ -8,31 +8,31 @@ The project is shipped in several nugets. You only need to pick one.
 
 There are now three packages to choose from 
 
-### Strike.IE
+### Strike.IE [![NuGet Status](http://img.shields.io/nuget/v/Strike.IE.svg?style=flat)](https://www.nuget.org/packages/Strike.IE/)
 
 Uses the MSIE engine and has a dependency on the MSIE package. http://nuget.org/packages/Strike.IE
 
     PM> Install-Package Strike.IE
     
-### Strike.IE.Merged
+### Strike.IE.Merged [![NuGet Status](http://img.shields.io/nuget/v/Strike.IE.Merged.svg?style=flat)](https://www.nuget.org/packages/Strike.IE.Merged/)
 
 Uses the MSIE engine and merges the MSIE assembly. http://nuget.org/packages/Strike.IE.Merged
 
     PM> Install-Package Strike.IE.Merged
 
-### Strike.Jint
+### Strike.Jint [![NuGet Status](http://img.shields.io/nuget/v/Strike.Jint.svg?style=flat)](https://www.nuget.org/packages/Strike.Jint/)
 
 Uses the Jint engine and has a dependency on the Jint package. http://nuget.org/packages/Strike.Jint
 
     PM> Install-Package Strike.Jint
     
-### Strike.Jint.Merged
+### Strike.Jint.Merged [![NuGet Status](http://img.shields.io/nuget/v/Strike.Jint.Merged.svg?style=flat)](https://www.nuget.org/packages/Strike.Jint.Merged/)
 
 Uses the Jint engine and merges the Jint assembly. http://nuget.org/packages/Strike.Jint.Merged
 
     PM> Install-Package Strike.Jint.Merged
     
-### Strike.V8
+### Strike.V8 [![NuGet Status](http://img.shields.io/nuget/v/Strike.V8.svg?style=flat)](https://www.nuget.org/packages/Strike.V8/)
 
 Uses the V8 engine and has a dependency on the ClearScript V8 package. http://www.nuget.org/packages/Strike.V8/
     
