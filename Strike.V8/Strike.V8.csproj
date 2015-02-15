@@ -11,7 +11,7 @@
     <AssemblyName>Strike.V8</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>22c76d0a</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>191b7ceb</NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,7 +41,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Resourcer">
-      <HintPath>..\packages\Resourcer.Fody.1.2.0.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Resourcer.dll</HintPath>
+      <HintPath>..\packages\Resourcer.Fody.1.2.1.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\Resourcer.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -94,7 +94,9 @@
     <EmbeddedResource Include="..\Common\marked.js">
       <Link>marked.js</Link>
     </EmbeddedResource>
-    <Content Include="FodyWeavers.xml" />
+    <Content Include="FodyWeavers.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -114,9 +116,9 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Fody.1.26.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.26.1\build\Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\PepitaPackage.1.21.3\build\PepitaPackage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PepitaPackage.1.21.3\build\PepitaPackage.targets'))" />
+    <Error Condition="!Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets'))" />
+    <Error Condition="!Exists('..\packages\Fody.1.27.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.27.0\build\Fody.targets'))" />
   </Target>
-  <Import Project="..\packages\Fody.1.26.1\build\Fody.targets" Condition="Exists('..\packages\Fody.1.26.1\build\Fody.targets')" />
-  <Import Project="..\packages\PepitaPackage.1.21.3\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage.1.21.3\build\PepitaPackage.targets')" />
+  <Import Project="..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" />
+  <Import Project="..\packages\Fody.1.27.0\build\Fody.targets" Condition="Exists('..\packages\Fody.1.27.0\build\Fody.targets')" />
 </Project>
