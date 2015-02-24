@@ -20,13 +20,13 @@ namespace Strike.IE
 #if (!Merged)
         public 
 #endif
-            Markdownify(Options options, RenderMethods rendereMethods, MsieJsEngine engine)
+            Markdownify(Options options, RenderMethods renderMethods, MsieJsEngine engine)
         {
             this.engine = engine;
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);
 
-            var js = GetContructionJs(options, rendereMethods);
+            var js = GetContructionJs(options, renderMethods);
             engine.Execute(js);
         }
 
