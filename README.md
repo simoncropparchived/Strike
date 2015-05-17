@@ -166,7 +166,7 @@ Represents [Marked Options](https://github.com/chjj/marked#options-1)
 
 #### RenderMethods
 
-Represents [Block level renderer methods](https://github.com/chjj/marked#block-level-renderer-methods) and [Inline level renderer methods](https://github.com/chjj/marked#inline-level-renderer-methods) 
+Represents [Block level render methods](https://github.com/chjj/marked#block-level-renderer-methods) and [Inline level render methods](https://github.com/chjj/marked#inline-level-renderer-methods) 
 
     public class RenderMethods
     {
