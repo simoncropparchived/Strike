@@ -60,6 +60,7 @@
     <Compile Include="..\CommonForTests\StringExtensions.cs">
       <Link>StringExtensions.cs</Link>
     </Compile>
+    <Compile Include="RendererTest.cs" />
     <Compile Include="MarkdownifyTest.cs" />
   </ItemGroup>
   <ItemGroup>

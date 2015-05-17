@@ -23,6 +23,7 @@
         public string Br;
         public string Del;
         public string Link;
+        public string Text;
         public string Image;
 
         public string GetRenderExtensionsJs()
@@ -95,6 +96,10 @@
             if (Link != null)
             {
                 renderExtensions += "renderer.link =" + Link + "\r\n";
+            }
+            if (Text != null)
+            {
+                renderExtensions += "renderer.text =" + Text + "\r\n";
             }
             if (Image != null)
             {

@@ -66,6 +66,9 @@
     <Compile Include="..\Strike.IE.Tests\MarkdownifyTest.cs">
       <Link>MarkdownifyTest.cs</Link>
     </Compile>
+    <Compile Include="..\Strike.IE.Tests\RendererTest.cs">
+      <Link>RendererTest.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Strike.IE.Merged\Strike.IE.Merged.csproj">

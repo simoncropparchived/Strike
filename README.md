@@ -89,17 +89,21 @@ The output will be this
 
 The binary ships with a resource merged version of [MarkedJS](https://github.com/chjj/marked/). Also see the [License](https://github.com/chjj/marked/blob/master/LICENSE).
 
-### Current merged version
+### The Marked.js version
 
-The current version included in the library is v0.3.1. If you feel a newer version should be included at any point in time please raise an issue.
+The version included in the stable version of Strike is v0.3.2. 
+
+The version included in the unstable version of Strike is the version as at [2015-05-08](https://github.com/chjj/marked/blob/49b7eaca76d14ccd91f87decc11bbe213a6e0af4/lib/marked.js). 
+
+If you feel a newer version should be included at any point in time please raise an issue.
 
 ### Running a custom version
 
-If you want to run a custom version of MarkedJS simply place the custom `marked.js` in the current running directory and that file will be used instead of the merged version. The newest MarkedJS file can be obtained here https://github.com/chjj/marked/tree/master/lib 
+If you want to run a custom version of MarkedJS simply place the custom `marked.js` in the current running directory and that file will be used instead of the merged version. The newest MarkedJS file can be obtained here https://github.com/chjj/marked/tree/master/lib.
 
 ### Controlling Marked
 
-The 	`Markdownify` class takes two paramters 
+The `Markdownify` class takes two parameters 
 
 #### Options
 
@@ -183,6 +187,7 @@ Represents [Block level renderer methods](https://github.com/chjj/marked#block-l
         public string Br;
         public string Del;
         public string Link;
+        public string Text;
         public string Image;
     }
 
