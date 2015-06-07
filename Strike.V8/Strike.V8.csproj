@@ -33,9 +33,9 @@
     <DocumentationFile>bin\Release\Strike.V8.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClearScript, Version=5.4.1.0, Culture=neutral, PublicKeyToken=935d0c957da47c73, processorArchitecture=MSIL">
+    <Reference Include="ClearScript, Version=5.4.2.0, Culture=neutral, PublicKeyToken=935d0c957da47c73, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ClearScript.V8.5.4.1\lib\ClearScript.dll</HintPath>
+      <HintPath>..\packages\ClearScript.V8.5.4.2\lib\net40\ClearScript.dll</HintPath>
     </Reference>
     <Reference Include="Janitor, Version=1.1.1.0, Culture=neutral, PublicKeyToken=d34c7d3bba3746e6, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,7 +85,7 @@
     <Content Include="FodyWeavers.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="$(SolutionDir)packages\ClearScript.V8.5.4.1\tools\native\**\*.dll">
+    <Content Include="$(SolutionDir)packages\ClearScript.V8.5.4.2\tools\native\**\*.dll">
       <Link>%(FileName).dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <Visible>false</Visible>
