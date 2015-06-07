@@ -7,7 +7,7 @@ namespace Strike.V8
 {
     public class Markdownify : IDisposable
     {
-        V8ScriptEngine engine;
+        public V8ScriptEngine Engine { get; private set; }
 
         public Markdownify():this(new Options(), new RenderMethods())
         {
@@ -19,7 +19,7 @@ namespace Strike.V8
 
         public Markdownify(Options options, RenderMethods rendereMethods, V8ScriptEngine engine)
         {
-            this.engine = engine;
+            Engine = engine;
 
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);
@@ -58,7 +58,7 @@ marked.setOptions({1});", renderExtensions, optionsAsJs);
 
         public string Transform(string input)
         {
-            return (string)engine.Script.marked(input);
+            return (string)Engine.Script.marked(input);
         }
 
         public void Dispose()

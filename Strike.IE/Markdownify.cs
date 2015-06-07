@@ -7,9 +7,14 @@ namespace Strike.IE
 {
     public class Markdownify : IDisposable
     {
-        MsieJsEngine engine;
 
-        public Markdownify():this(new Options(), new RenderMethods())
+#if (Merged)
+            MsieJsEngine Engine ;
+#else
+        public MsieJsEngine Engine { get; private set; }
+#endif
+
+        public Markdownify() : this(new Options(), new RenderMethods())
         {
         }
 
@@ -17,12 +22,13 @@ namespace Strike.IE
             : this(options, rendereMethods, new MsieJsEngine(JsEngineMode.Auto))
         {
         }
+
 #if (!Merged)
-        public 
+        public
 #endif
             Markdownify(Options options, RenderMethods renderMethods, MsieJsEngine engine)
         {
-            this.engine = engine;
+            Engine = engine;
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);
 
@@ -60,7 +66,7 @@ marked.setOptions({1});", renderExtensions, optionsAsJs);
 
         public string Transform(string input)
         {
-            return (string)engine.CallFunction("marked", input);
+            return (string) Engine.CallFunction("marked", input);
         }
 
         public void Dispose()

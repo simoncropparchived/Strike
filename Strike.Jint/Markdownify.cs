@@ -7,7 +7,12 @@ namespace Strike.Jint
 {
     public class Markdownify : IDisposable
     {
-        Engine engine;
+
+#if (Merged)
+        Engine Engine;
+#else
+        public Engine Engine { get; private set; }
+#endif
 
         public Markdownify():this(new Options(), new RenderMethods())
         {
@@ -20,7 +25,7 @@ namespace Strike.Jint
 
         public Markdownify(Options options, RenderMethods rendereMethods, Engine engine)
         {
-            this.engine = engine;
+            Engine = engine;
 
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);
@@ -59,7 +64,7 @@ marked.setOptions({1});", renderExtensions, optionsAsJs);
 
         public string Transform(string input)
         {
-            return engine.Invoke("marked",input).AsString();
+            return Engine.Invoke("marked",input).AsString();
         }
 
         public void Dispose()
