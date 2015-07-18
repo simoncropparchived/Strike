@@ -17,7 +17,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;V8</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;Jint</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -71,9 +71,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Strike.V8\Strike.V8.csproj">
-      <Project>{041d857e-d540-40ca-b50b-9e90b5b1f574}</Project>
-      <Name>Strike.V8</Name>
+    <ProjectReference Include="..\Strike.Jint\Strike.Jint.csproj">
+      <Project>{c25bfa62-2568-441e-922f-8b363225583c}</Project>
+      <Name>Strike.Jint</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
