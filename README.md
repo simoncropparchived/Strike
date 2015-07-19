@@ -6,7 +6,7 @@ Wraps [Marked.js](https://github.com/chjj/marked/) to make it usable from .net.
 
 The project is shipped in several nugets. You only need to pick one.
 
-There are now three packages to choose from 
+There are now five packages to choose from 
 
 ### Strike.IE [![NuGet Status](http://img.shields.io/nuget/v/Strike.IE.svg?style=flat)](https://www.nuget.org/packages/Strike.IE/)
 
