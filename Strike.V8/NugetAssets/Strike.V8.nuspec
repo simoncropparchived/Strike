@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>Strike.V8</id>
-    <version>$version$-beta02</version>
+    <version>$version$</version>
     <title>Strike.V8</title>
     <authors>Simon Cropp</authors>
     <owners>Simon Cropp</owners>
