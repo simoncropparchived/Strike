@@ -7,6 +7,7 @@ namespace Strike.V8
 {
     public class Markdownify : IDisposable
     {
+        // ReSharper disable once AutoPropertyCanBeMadeGetOnly.Local
         public V8ScriptEngine Engine { get; private set; }
 
         public Markdownify():this(new Options(), new RenderMethods())
@@ -36,10 +37,10 @@ namespace Strike.V8
             var renderExtensions = renderMethods.GetRenderExtensionsJs();
 
             var optionsAsJs = options.GetOptionsJs();
-            return string.Format(@"
+            return $@"
 var renderer = new marked.Renderer();
-{0}
-marked.setOptions({1});", renderExtensions, optionsAsJs);
+{renderExtensions}
+marked.setOptions({optionsAsJs});";
         }
 
         /// <summary>

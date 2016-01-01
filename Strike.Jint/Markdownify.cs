@@ -2,16 +2,22 @@
 using System.IO;
 using Jint;
 using Resourcer;
+// ReSharper disable MemberCanBePrivate.Global
+// ReSharper disable UnusedMember.Global
+// ReSharper disable ConvertPropertyToExpressionBody
+// ReSharper disable ConvertToAutoPropertyWhenPossible
 
 namespace Strike.Jint
 {
     public class Markdownify : IDisposable
     {
 
-#if (Merged)
-        Engine Engine;
-#else
-        public Engine Engine { get; private set; }
+        Engine engine;
+#if (!Merged)
+        public Engine Engine
+        {
+            get { return engine; }
+        }
 #endif
 
         public Markdownify():this(new Options(), new RenderMethods())
@@ -25,7 +31,7 @@ namespace Strike.Jint
 
         public Markdownify(Options options, RenderMethods rendereMethods, Engine engine)
         {
-            Engine = engine;
+            this.engine = engine;
 
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);
@@ -42,10 +48,10 @@ namespace Strike.Jint
             var renderExtensions = renderMethods.GetRenderExtensionsJs();
 
             var optionsAsJs = options.GetOptionsJs();
-            return string.Format(@"
+            return $@"
 var renderer = new marked.Renderer();
-{0}
-marked.setOptions({1});", renderExtensions, optionsAsJs);
+{renderExtensions}
+marked.setOptions({optionsAsJs});";
         }
 
         /// <summary>
@@ -64,7 +70,7 @@ marked.setOptions({1});", renderExtensions, optionsAsJs);
 
         public string Transform(string input)
         {
-            return Engine.Invoke("marked",input).AsString();
+            return engine.Invoke("marked",input).AsString();
         }
 
         public void Dispose()

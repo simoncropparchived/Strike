@@ -2,16 +2,20 @@
 using System.IO;
 using MsieJavaScriptEngine;
 using Resourcer;
+// ReSharper disable ConvertPropertyToExpressionBody
+// ReSharper disable ConvertToAutoPropertyWhenPossible
 
 namespace Strike.IE
 {
     public class Markdownify : IDisposable
     {
+        MsieJsEngine engine;
 
-#if (Merged)
-            MsieJsEngine Engine ;
-#else
-        public MsieJsEngine Engine { get; private set; }
+#if (!Merged)
+        public MsieJsEngine Engine
+        {
+            get { return engine; }
+        }
 #endif
 
         public Markdownify() : this(new Options(), new RenderMethods())
@@ -19,7 +23,7 @@ namespace Strike.IE
         }
 
         public Markdownify(Options options, RenderMethods rendereMethods)
-            : this(options, rendereMethods, new MsieJsEngine(JsEngineMode.Auto))
+            : this(options, rendereMethods, new MsieJsEngine(new JsEngineSettings {EngineMode = JsEngineMode.Auto}))
         {
         }
 
@@ -28,7 +32,7 @@ namespace Strike.IE
 #endif
             Markdownify(Options options, RenderMethods renderMethods, MsieJsEngine engine)
         {
-            Engine = engine;
+            this.engine = engine;
             var markedJsText = GetMarkedJsText();
             engine.Execute(markedJsText);
 
@@ -44,10 +48,10 @@ namespace Strike.IE
             var renderExtensions = renderMethods.GetRenderExtensionsJs();
 
             var optionsAsJs = options.GetOptionsJs();
-            return string.Format(@"
+            return $@"
 var renderer = new marked.Renderer();
-{0}
-marked.setOptions({1});", renderExtensions, optionsAsJs);
+{renderExtensions}
+marked.setOptions({optionsAsJs});";
         }
 
         /// <summary>
@@ -66,7 +70,7 @@ marked.setOptions({1});", renderExtensions, optionsAsJs);
 
         public string Transform(string input)
         {
-            return (string) Engine.CallFunction("marked", input);
+            return (string) engine.CallFunction("marked", input);
         }
 
         public void Dispose()
