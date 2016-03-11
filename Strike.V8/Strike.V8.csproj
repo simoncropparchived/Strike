@@ -41,12 +41,12 @@
       <HintPath>..\packages\ClearScript.V8.5.4.4\lib\net40\ClearScript.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Janitor, Version=1.1.4.0, Culture=neutral, PublicKeyToken=d34c7d3bba3746e6, processorArchitecture=MSIL">
-      <HintPath>..\packages\Janitor.Fody.1.1.4.0\lib\portable-net4+sl5+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\Janitor.dll</HintPath>
+    <Reference Include="Janitor, Version=1.1.6.0, Culture=neutral, PublicKeyToken=d34c7d3bba3746e6, processorArchitecture=MSIL">
+      <HintPath>..\packages\Janitor.Fody.1.1.6.0\lib\dotnet\Janitor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Resourcer, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Resourcer.Fody.1.4.0\lib\portable-net45+netcore45+wpa81+wp8\Resourcer.dll</HintPath>
+      <HintPath>..\packages\Resourcer.Fody.1.4.1\lib\portable-net45+netcore45+wpa81+wp8\Resourcer.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -114,7 +114,6 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets'))" />
     <Error Condition="!Exists('..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets'))" />
-    <Error Condition="!Exists('..\packages\Resourcer.Fody.1.4.0\build\dotnet\Resourcer.Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Resourcer.Fody.1.4.0\build\dotnet\Resourcer.Fody.targets'))" />
   </Target>
   <Import Project="..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" />
   <PropertyGroup>
@@ -125,5 +124,4 @@ if not exist "$(TargetDir)" md "$(TargetDir)"
 xcopy /s /y "$(SolutionDir)packages\ClearScript.V8.5.4.4\tools\native\amd64\*.*" "$(TargetDir)"</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\packages\Fody.1.29.4\build\portable-net+sl+win+wpa+wp\Fody.targets')" />
-  <Import Project="..\packages\Resourcer.Fody.1.4.0\build\dotnet\Resourcer.Fody.targets" Condition="Exists('..\packages\Resourcer.Fody.1.4.0\build\dotnet\Resourcer.Fody.targets')" />
 </Project>
