@@ -157,13 +157,20 @@ Represents [Marked Options](https://github.com/chjj/marked#options-1)
         public bool SmartyPants;
 
         /// <summary>
+        /// Use "Xhtml" rendering.
+        /// Default: false
+        /// https://github.com/chjj/marked#xhtml
+        /// </summary>
+        public bool Xhtml;
+
+        /// <summary>
         /// A function to highlight code blocks. 
         /// https://github.com/chjj/marked#highlight
         /// Default: "function (code) {return code;}"
         /// </summary>
         public string Highlight = "function (code) {return code;}";
     }
-
+    
 #### RenderMethods
 
 Represents [Block level render methods](https://github.com/chjj/marked#block-level-renderer-methods) and [Inline level render methods](https://github.com/chjj/marked#inline-level-renderer-methods) 
