@@ -34,7 +34,7 @@
         public bool Sanitize;
 
         /// <summary>
-        /// Use smarter list behavior than the original markdown. 
+        /// Use smarter list behavior than the original markdown.
         /// Default: true
         /// https://github.com/chjj/marked#smartlists
         /// </summary>
@@ -55,7 +55,7 @@
         public bool Xhtml;
 
         /// <summary>
-        /// A function to highlight code blocks. 
+        /// A function to highlight code blocks.
         /// https://github.com/chjj/marked#highlight
         /// Default: "function (code) {return code;}"
         /// </summary>
