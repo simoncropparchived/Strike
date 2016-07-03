@@ -58,10 +58,14 @@ marked.setOptions({optionsAsJs});";
             return Resource.AsString("marked.js");
         }
 
-        public string Transform(string input)
+        public string Transform(string input, string options = null)
         {
             input = HttpUtility.JavaScriptStringEncode(input);
-            var code = $"marked('{input}')";
+            if (options == null)
+            {
+                options = "{}";
+            }
+            var code = $@"marked('{input}',{options})";
             return (string) Engine.Evaluate(code);
         }
 
