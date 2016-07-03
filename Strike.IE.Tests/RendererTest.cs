@@ -16,7 +16,7 @@ public class RendererTest
     [Test]
     public void Code()
     {
-        var input = 
+        var input =
 @"```
 the code
 ```";
@@ -64,7 +64,7 @@ the code
     public void Image()
     {
         var input = "![text](href.png \"text\")";
-        
+
         var rendereMethods = new RenderMethods
         {
             Image = @"

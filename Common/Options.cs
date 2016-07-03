@@ -63,7 +63,19 @@
 
         public string GetOptionsJs()
         {
-            return $@"{{gfm: {GitHubFlavor.AsJs()}, tables: {Tables.AsJs()}, breaks: {Breaks.AsJs()}, sanitize: {Sanitize.AsJs()}, smartLists: {SmartLists.AsJs()}, pedantic: {Pedantic.AsJs()}, smartypants: {SmartyPants.AsJs()}, highlight: {Highlight}, xhtml: {Xhtml.AsJs()}, renderer: renderer}}";
+            return $@"
+{{
+    gfm: {GitHubFlavor.AsJs()},
+    tables: {Tables.AsJs()},
+    breaks: {Breaks.AsJs()},
+    sanitize: {Sanitize.AsJs()},
+    smartLists: {SmartLists.AsJs()},
+    pedantic: {Pedantic.AsJs()},
+    smartypants: {SmartyPants.AsJs()},
+    highlight: {Highlight},
+    xhtml: {Xhtml.AsJs()},
+    renderer: renderer
+}}";
         }
 
     }

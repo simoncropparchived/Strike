@@ -60,7 +60,7 @@ marked.setOptions({optionsAsJs});";
         /// </summary>
         public string GetMarkedJsText()
         {
-            var markedPath = Path.Combine(AssemblyLocation.CurrentDirectory, @"marked.js");
+            var markedPath = Path.Combine(AssemblyLocation.CurrentDirectory, "marked.js");
             if (File.Exists(markedPath))
             {
                 return File.ReadAllText(markedPath);
@@ -70,7 +70,7 @@ marked.setOptions({optionsAsJs});";
 
         public string Transform(string input)
         {
-            return (string) engine.CallFunction("marked", input);
+            return engine.CallFunction<string>("marked", input);
         }
 
         public void Dispose()

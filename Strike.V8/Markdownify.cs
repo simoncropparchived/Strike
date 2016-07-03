@@ -13,7 +13,7 @@ namespace Strike.V8
         public Markdownify():this(new Options(), new RenderMethods())
         {
         }
-        
+
         public Markdownify(Options options, RenderMethods rendereMethods): this (options, rendereMethods, new V8ScriptEngine())
         {
         }
