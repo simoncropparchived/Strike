@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Web;
 using Microsoft.ClearScript.V8;
 using Resourcer;
 
@@ -59,7 +60,9 @@ marked.setOptions({optionsAsJs});";
 
         public string Transform(string input)
         {
-            return (string)Engine.Script.marked(input);
+            input = HttpUtility.JavaScriptStringEncode(input);
+            var code = $"marked('{input}')";
+            return (string) Engine.Evaluate(code);
         }
 
         public void Dispose()
