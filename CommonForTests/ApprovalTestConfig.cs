@@ -1,3 +1,3 @@
 ﻿using ApprovalTests.Reporters;
 
-[assembly: UseReporter(typeof(ClipboardReporter), typeof(DiffReporter))]
+[assembly: UseReporter(typeof(AllFailingTestsClipboardReporter), typeof(DiffReporter))]
