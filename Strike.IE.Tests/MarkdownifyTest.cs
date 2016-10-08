@@ -134,7 +134,7 @@ the code
     public void InvokeRootMarkedJsMember()
     {
         var input = "![text](href.png \"text\")";
-        
+
         var rendereMethods = new RenderMethods
         {
             Image = @"
