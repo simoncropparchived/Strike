@@ -2,41 +2,48 @@
 
 Wraps [Marked.js](https://github.com/chjj/marked/) to make it usable from .net.
 
+
 ## Nuget
 
 The project is shipped in several nugets. You only need to pick one.
 
 There are now five packages to choose from 
 
+
 ### Strike.IE [![NuGet Status](http://img.shields.io/nuget/v/Strike.IE.svg?style=flat)](https://www.nuget.org/packages/Strike.IE/)
 
 Uses the MSIE engine and has a dependency on the MSIE package. http://nuget.org/packages/Strike.IE
 
     PM> Install-Package Strike.IE
-    
+
+
 ### Strike.IE.Merged [![NuGet Status](http://img.shields.io/nuget/v/Strike.IE.Merged.svg?style=flat)](https://www.nuget.org/packages/Strike.IE.Merged/)
 
 Uses the MSIE engine and merges the MSIE assembly. http://nuget.org/packages/Strike.IE.Merged
 
     PM> Install-Package Strike.IE.Merged
 
+
 ### Strike.Jint [![NuGet Status](http://img.shields.io/nuget/v/Strike.Jint.svg?style=flat)](https://www.nuget.org/packages/Strike.Jint/)
 
 Uses the Jint engine and has a dependency on the Jint package. http://nuget.org/packages/Strike.Jint
 
     PM> Install-Package Strike.Jint
-    
+
+
 ### Strike.Jint.Merged [![NuGet Status](http://img.shields.io/nuget/v/Strike.Jint.Merged.svg?style=flat)](https://www.nuget.org/packages/Strike.Jint.Merged/)
 
 Uses the Jint engine and merges the Jint assembly. http://nuget.org/packages/Strike.Jint.Merged
 
     PM> Install-Package Strike.Jint.Merged
-    
+
+
 ### Strike.V8 [![NuGet Status](http://img.shields.io/nuget/v/Strike.V8.svg?style=flat)](https://www.nuget.org/packages/Strike.V8/)
 
 Uses the V8 engine and has a dependency on the ClearScript V8 package. http://www.nuget.org/packages/Strike.V8/
     
     PM> Install-Package Strike.V8
+
 
 ## Usage
 
@@ -89,21 +96,25 @@ The output will be this
 
 The binary ships with a resource merged version of [MarkedJS](https://github.com/chjj/marked/). Also see the [License](https://github.com/chjj/marked/blob/master/LICENSE).
 
+
 ### The Marked.js version
 
-The version included in the stable version of Strike is v0.3.2. 
+The version included in the stable version of Strike is v0.3.6
 
-The version included in the unstable version of Strike is the version as at [2015-05-08](https://github.com/chjj/marked/blob/49b7eaca76d14ccd91f87decc11bbe213a6e0af4/lib/marked.js). 
+The version included in the unstable version of Strike is the version as at Tag [v0.3.6](https://github.com/chjj/marked/blob/v0.3.6/lib/marked.js). 
 
 If you feel a newer version should be included at any point in time please raise an issue.
+
 
 ### Running a custom version
 
 If you want to run a custom version of MarkedJS simply place the custom `marked.js` in the current running directory and that file will be used instead of the merged version. The newest MarkedJS file can be obtained here https://github.com/chjj/marked/tree/master/lib.
 
+
 ### Controlling Marked
 
 The `Markdownify` class takes two parameters 
+
 
 #### Options
 
@@ -170,7 +181,8 @@ Represents [Marked Options](https://github.com/chjj/marked#options-1)
         /// </summary>
         public string Highlight = "function (code) {return code;}";
     }
-    
+
+
 #### RenderMethods
 
 Represents [Block level render methods](https://github.com/chjj/marked#block-level-renderer-methods) and [Inline level render methods](https://github.com/chjj/marked#inline-level-renderer-methods) 
@@ -198,6 +210,7 @@ Represents [Block level render methods](https://github.com/chjj/marked#block-lev
         public string Image;
     }
 
+
 ## Performance
 
 Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/markdown/) as a document source.
@@ -209,6 +222,7 @@ Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/mar
 |Strike.IE|4 ms|1 ms|187 ms|**0.62 ms**|
 |Strike.Jint|7 ms|11 ms|5693 ms|**18.73 ms**|
 |Strike.V8|30 ms|4 ms|93 ms|**0.31 ms**|
+
 
 ### So why use this library
 
@@ -224,6 +238,7 @@ Other points to consider
 
 * MarkedJS rendering most closely matches GitHubs markdown rendering
 * MarkedJS is an active project with bugs fixed promptly and features being added 
+
 
 ## Icon 
 
