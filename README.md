@@ -211,35 +211,6 @@ Represents [Block level render methods](https://github.com/chjj/marked#block-lev
     }
 
 
-## Performance
-
-Using [John Grubers Markdown Test Suite](https://daringfireball.net/projects/markdown/) as a document source.
-
-| Engine | Warm up | Construction |  Bulk (304 docs) | Average per doc |
-|:-------|:-------:|:------------:|:---------------:|:---------------:|
-|MarkdownSharp|0 ms|0 ms|479 ms|**1.58 ms**|
-|MarkdownDeep|0 ms|0 ms|35 ms|**0.12 ms**|
-|Strike.IE|4 ms|1 ms|187 ms|**0.62 ms**|
-|Strike.Jint|7 ms|11 ms|5693 ms|**18.73 ms**|
-|Strike.V8|30 ms|4 ms|93 ms|**0.31 ms**|
-
-
-### So why use this library
-
-So this raises the question of
- 
-> why use this library over MarkdownDeep
-
-And the answer is 
-
-> It is not only about performance
-
-Other points to consider
-
-* MarkedJS rendering most closely matches GitHubs markdown rendering
-* MarkedJS is an active project with bugs fixed promptly and features being added 
-
-
 ## Icon 
 
 <a href="http://thenounproject.com/term/lightning/6029/" target="_blank">Lightning</a> designed by <a href="http://thenounproject.com/tlb/" target="_blank">Thomas Le Bas</a> from The Noun Project
