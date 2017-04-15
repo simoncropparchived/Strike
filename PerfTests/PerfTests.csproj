@@ -60,7 +60,6 @@
     <Compile Include="Result.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="MarkdownTest\Amps and angle encoding.text">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
